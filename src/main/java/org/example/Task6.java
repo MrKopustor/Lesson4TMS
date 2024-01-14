@@ -1,8 +1,9 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class Task5 {
+public class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -17,23 +18,23 @@ public class Task5 {
         } while (arrayLength <= 0);
 
         int[] array = new int[arrayLength];
+        System.out.println("Enter an array of " + arrayLength + " element");
         for (int i = 0; i < arrayLength; i++) {
-            array[i] = ((int) (Math.random() * 101));
-            System.out.print(array[i] + " ");
+            array[i] = scanner.nextInt();
         }
-        System.out.println("original");
 
-        int firstElement = array[0];
-        int secondElement = array[1];
-        for (int j = 0; j < arrayLength; j++) {
-            array[0] = array[arrayLength - 1];
-            array[arrayLength - 1] = firstElement;
-            array[1] = array[arrayLength - 1];
-            array[arrayLength - 1] = secondElement;
-            System.out.print(array[j] + " ");
+        System.out.println("original " + Arrays.toString(array));
+        boolean growingArray = true;
+        for (int i = 0; i < arrayLength - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                growingArray = false;
+                break;
+            }
         }
-        System.out.println("replacement");
-
+        if (growingArray == true) {
+            System.out.println("Growing Array");
+        } else {
+            System.out.println("Not growing array");
+        }
     }
-
 }
