@@ -33,7 +33,7 @@ public class Task5 {
             System.out.print(array[j] + " ");
         }
         System.out.println("replacement");
-
+        scanner.close();
     }
 
 }

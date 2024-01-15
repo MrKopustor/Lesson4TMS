@@ -20,7 +20,6 @@ public class Task4 {
         System.out.println("Enter an array of " + arrayLength + " element");
         for (int i = 0; i < arrayLength; i++) {
             array[i] = scanner.nextInt();
-            System.out.print(array[i] + " ");
         }
 
         int numberOfZero = 0;
@@ -34,5 +33,6 @@ public class Task4 {
         } else {
             System.out.println("\nno null element");
         }
+        scanner.close();
     }
 }

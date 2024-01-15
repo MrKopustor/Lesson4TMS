@@ -36,5 +36,6 @@ public class Task6 {
         } else {
             System.out.println("Not growing array");
         }
+        scanner.close();
     }
 }
